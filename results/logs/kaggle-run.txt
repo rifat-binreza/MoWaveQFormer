@@ -1,0 +1,549 @@
+7.1s 1 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.1s 2 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.1s 3 0.00s - to python to disable frozen modules.
+7.1s 4 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+7.7s 5 0.00s - Debugger warning: It seems that frozen modules are being used, which may
+7.7s 6 0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+7.7s 7 0.00s - to python to disable frozen modules.
+7.7s 8 0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+11.5s 9 [?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/163.9 kB[0m [31m?[0m eta [36m-:--:--[0m
+[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m163.8/163.9 kB[0m [31m6.4 MB/s[0m eta [36m0:00:01[0m
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m163.9/163.9 kB[0m [31m4.0 MB/s[0m eta [36m0:00:00[0m
+11.5s 10 [?25h[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/688.9 kB[0m [31m?[0m eta [36m-:--:--[0m
+[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m686.1/688.9 kB[0m [31m30.6 MB/s[0m eta [36m0:00:01[0m
+[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m688.9/688.9 kB[0m [31m18.7 MB/s[0m eta [36m0:00:00[0m
+15.4s 11 [?25hAnn  columns: ['id', 'quality', 'hr']
+15.4s 12 Subj columns: ['id', 'gender', 'age_years', 'height_cm', 'weight_kg', 'ear_finger', 'motion', 'blood_pressure_mmhg', 'glycaemia_mmol_l', 'spo2_pct']
+15.4s 13 
+15.4s 14 True unique subjects: 50
+15.4s 15 Records per subject (mean): 77.8
+15.4s 16 
+15.4s 17 Raw p_signal shape: (1, 300)
+15.4s 18 fs=30, n_sig=300
+15.4s 19 Transposed to: (300, 1) ✓
+15.4s 20 PPG signal length: 300 samples @ 30Hz = 10.0s
+15.4s 21 PPG range: [-254.7572, -253.9115]
+15.4s 22 PPG non-zero: 300 / 300
+18.6s 23 
+18.6s 24 ECG signal length: 10000 samples @ 1000Hz = 10.0s
+18.6s 25 R-peaks: 13 peaks → ECG HR = 82.5 bpm
+18.6s 26 Annotation HR for this record: 83 bpm
+18.6s 27 
+18.6s 28 =======================================================
+18.6s 29 DATASET AUDIT — Journal-ready numbers
+18.6s 30 =======================================================
+18.6s 31 Total recordings        : 3888
+18.6s 32 Unique subjects         : 50
+18.6s 33 Signal duration         : 10s per recording
+18.6s 34 PPG sampling rate       : 30 Hz (300 samples)
+18.6s 35 ECG sampling rate       : 1000 Hz (10000 samples)
+18.6s 36 ACC available           : 3840/3888 records have ACC.
+18.6s 37 
+18.6s 38 Quality distribution:
+18.6s 39 quality=0: 3058 records (78.7%)
+18.6s 40 quality=1: 830 records (21.3%)
+18.6s 41 
+18.6s 42 HR (from annotation, ECG-derived):
+18.6s 43 mean=78.15 ± 13.33 bpm
+18.6s 44 range=[38, 161] bpm
+18.6s 45 
+18.6s 46 Motion class distribution (cleaned):
+18.6s 47 rest                   (class=0): 2724
+18.6s 48 higher_pressure        (class=1): 144
+18.6s 49 moving_finger          (class=2): 156
+18.6s 50 walking                (class=3): 144
+18.6s 51 coughing               (class=4): 144
+18.6s 52 laughing               (class=5): 144
+18.6s 53 light_change           (class=6): 288
+18.6s 54 talking                (class=7): 144
+18.6s 55 
+18.6s 56 Subject demographics:
+18.6s 57 Age : 33.9 ± 16.7 years
+18.6s 58 Gender: {'F': 25, 'M': 25}
+18.6s 59 
+18.6s 60 Saved: /kaggle/working/master_ann.csv  (shape=(3888, 15))
+18.6s 61 
+18.6s 62 =======================================================
+18.6s 63 CONFIRMED CONSTANTS (copy to all later sections)
+18.6s 64 =======================================================
+18.6s 65 ROOT         = Path('/kaggle/input/datasets/swandipsingha/brnounidataset/brno-university-of-technology-smartphone-ppg-database-but-ppg-2.0.0')
+18.6s 66 FS_PPG       = 30
+18.6s 67 FS_ECG       = 1000
+18.6s 68 PPG_LEN      = 300   # samples
+18.6s 69 ECG_LEN      = 10000   # samples
+18.6s 70 N_SUBJECTS   = 50
+18.6s 71 MOTION_COL   = 'motion'
+18.6s 72 QUALITY_COL  = 'quality'
+18.6s 73 HR_COL       = 'hr'
+18.6s 74 PPG_TRANSPOSE= True  # True=already correct, False=must transpose
+18.6s 75 
+18.6s 76 [SECTION 1 FINAL — COMPLETE]
+20.3s 77 Records to process: 3888
+20.3s 78 Processing all 3888 records …
+20.3s 79 (Approx 15–20 min on Kaggle CPU — ACC loading adds time)
+20.3s 80 
+35.5s 81 500/3888 …
+48.0s 82 1000/3888 …
+60.9s 83 1500/3888 …
+73.9s 84 2000/3888 …
+86.9s 85 2500/3888 …
+99.5s 86 3000/3888 …
+113.2s 87 3500/3888 …
+123.2s 88 
+123.2s 89 Succeeded : 3888
+123.2s 90 Failed    : 0
+123.2s 91 With ACC  : 3840
+123.2s 92 Without ACC:48
+123.2s 93 
+123.2s 94 ECG HR sanity: mean|diff|=2.98 bpm, max=86.63 bpm
+123.2s 95 
+123.2s 96 ==============================================================
+123.2s 97 TABLE I-A — PTT Statistics by Motion Class (Journal Table I)
+123.2s 98 ==============================================================
+123.2s 99 Motion Class           mean PTT(s)     std      n
+123.2s 100 --------------------------------------------------
+123.2s 101 rest                        0.3177  0.0885   2695
+123.2s 102 higher_pressure             0.2977  0.0921    143
+123.2s 103 moving_finger               0.3120  0.0805    156
+123.2s 104 walking                     0.3148  0.0738    143
+123.2s 105 coughing                    0.3130  0.0775    144
+123.2s 106 laughing                    0.3077  0.0717    143
+123.2s 107 light_change                0.3064  0.0758    287
+123.2s 108 talking                     0.3026  0.0811    144
+123.2s 109 
+123.2s 110 ==============================================================
+123.2s 111 TABLE I-B — ACC RMS Energy by Motion Class (Release 2 only)
+123.2s 112 ==============================================================
+123.2s 113 Motion Class             mean RMS      std  dom_freq(Hz)
+123.2s 114 --------------------------------------------------------
+123.2s 115 rest                     959.6075  13.7288         2.677
+123.2s 116 higher_pressure          959.2961  12.7513         2.642
+123.2s 117 moving_finger            958.6006  13.0586         2.687
+123.2s 118 walking                  967.7677  12.4314         1.949
+123.2s 119 coughing                 960.0587  11.7649         3.251
+123.2s 120 laughing                 960.5029  10.9396         3.449
+123.2s 121 light_change             959.6056  12.1366         2.776
+123.2s 122 talking                  957.9907  11.6709         2.834
+123.2s 123 
+123.2s 124 Overall PTT: mean=0.3147s, std=0.0858s, n=3855
+123.2s 125 
+123.2s 126 Saved: features.csv, merged.csv
+123.2s 127 [SECTION 2 UPDATED — COMPLETE]
+129.0s 128 Regenerating split (seed=42)...
+129.0s 129 Train:2742 Val:548 Test:598
+129.0s 130 Total: Train=2742 Val=548 Test=598
+129.0s 131 
+129.0s 132 === Rule-based conditioner verification (on ACC records) ===
+131.0s 133 Rule-based conditioner accuracy on TEST set (n=594): 0.5135
+131.0s 134 Confusion matrix (rows = ground truth, cols = predicted):
+131.0s 135 {0: {0: 270, 1: 16, 2: 242}, 1: {0: 6, 1: 15, 2: 1}, 2: {0: 23, 1: 1, 2: 20}}
+131.0s 136 subtle/rest         270      16     242
+131.0s 137 walking               6      15       1
+131.0s 138 burst                23       1      20
+131.0s 139 
+131.0s 140 Dataset smoke test ...
+131.0s 141 ppg shape    : torch.Size([1, 300])
+131.0s 142 acc shape    : torch.Size([3, 1000])
+131.0s 143 ecg_hr       : 83.0 bpm
+131.0s 144 quality      : 1.0
+131.0s 145 motion       : 0 (rest)
+131.0s 146 motion_group : 0 (subtle/rest)
+131.0s 147 ptt          : 0.3043s valid=True
+131.0s 148 has_acc      : False
+131.0s 149 Smoke test: PASSED ✓
+131.0s 150 
+131.0s 151 Motion group distribution (annotation-based):
+131.0s 152 Train: subtle/rest:2436 | walking:102 | burst:204
+131.0s 153 Val: subtle/rest:488 | walking:20 | burst:40
+131.0s 154 Test: subtle/rest:532 | walking:22 | burst:44
+131.0s 155 
+131.0s 156 Loaders built:
+131.0s 157 Train batches : 86
+131.0s 158 Val   batches : 18
+131.0s 159 Test  batches : 19
+131.0s 160 
+131.0s 161 =======================================================
+131.0s 162 TABLE II — Motion Group Distribution (Journal)
+131.0s 163 =======================================================
+131.0s 164 Rule-based conditioner groups 8 motion types into 3
+131.0s 165 spectral corruption profiles:
+131.0s 166 
+131.0s 167 Motion class            Group Group name
+131.0s 168 ---------------------------------------------
+131.0s 169 rest                        0   subtle/rest
+131.0s 170 higher_pressure             0   subtle/rest
+131.0s 171 moving_finger               0   subtle/rest
+131.0s 172 walking                     1   walking
+131.0s 173 coughing                    2   burst
+131.0s 174 laughing                    2   burst
+131.0s 175 light_change                0   subtle/rest
+131.0s 176 talking                     0   subtle/rest
+131.0s 177 
+131.0s 178 Physiological rationale:
+131.0s 179 Subtle (group 0): minimal ACC motion; PPG corrupted by
+131.0s 180 DC drift and mild amplitude change only
+131.0s 181 Walking (group 1): step frequency 1-2.5 Hz contaminates
+131.0s 182 PPG in the HR estimation band [0.5-4 Hz]
+131.0s 183 Burst (group 2): transient high-energy events [4-15 Hz]
+131.0s 184 cause non-stationary PPG corruption
+131.0s 185 
+131.0s 186 [SECTION 3 v7 — COMPLETE]
+131.0s 187 Saved: /kaggle/working/motion_group_meta.pt
+131.0s 188 Saved: /kaggle/working/split_ids.json
+131.0s 189 
+131.0s 190 Ready for Section 4 — MoWaveNet training
+136.7s 191 Loaded split_ids.json
+136.7s 192 Train:2742 Val:548 Test:598 | Device:cuda
+136.7s 193 
+136.7s 194 =======================================================
+136.7s 195 ACTION 1: Retraining MoWaveNet (improved schedule)
+136.7s 196 =======================================================
+136.7s 197 /tmp/ipykernel_22/4213775801.py:235: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+136.7s 198 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+136.7s 199 
+136.7s 200 /tmp/ipykernel_22/4213775801.py:235: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+136.7s 201 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+136.8s 202 
+136.8s 203 Ep |  Train MAE |   Val MAE |        LR
+136.8s 204 ------------------------------------------
+139.2s 205 /usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:897.)
+139.2s 206 return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+139.2s 207 
+139.2s 208 /usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: Memory Efficient attention defaults to a non-deterministic algorithm. To explicitly enable determinism call torch.use_deterministic_algorithms(True, warn_only=False). (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/attention_backward.cu:897.)
+139.2s 209 return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+157.2s 210 1 |     66.331 |    45.258 |  0.000120
+311.1s 211 10 |     10.203 |     8.740 |  0.000300
+472.3s 212 20 |      9.996 |     8.074 |  0.000300
+635.3s 213 30 |      9.857 |     9.988 |  0.000300
+797.1s 214 40 |      9.545 |    11.491 |  0.000300
+957.3s 215 50 |      9.539 |     7.529 |  0.000300
+1113.5s 216 60 |      9.211 |     7.681 |  0.000300
+1270.1s 217 70 |      9.319 |     7.706 |  0.000300
+1426.8s 218 80 |      9.083 |     9.401 |  0.000300
+1426.8s 219 Best Validation MAE: 7.162 bpm
+1426.8s 220 
+1426.8s 221 =======================================================
+1426.8s 222 ACTION 2: Ablation Study
+1426.8s 223 =======================================================
+1426.8s 224 
+1426.8s 225 [Ablation A] Fixed wavelet (no motion conditioning) ...
+1426.8s 226 
+1426.8s 227 Ep |  Train MAE |   Val MAE |        LR
+1426.8s 228 ------------------------------------------
+1442.1s 229 1 |     68.353 |    51.850 |  0.000120
+1581.1s 230 10 |     10.922 |    10.858 |  0.000300
+1739.3s 231 20 |     10.543 |     9.513 |  0.000300
+1895.2s 232 30 |     10.899 |     7.079 |  0.000300
+2050.2s 233 40 |      9.959 |     7.438 |  0.000300
+2207.7s 234 50 |     10.301 |     8.468 |  0.000300
+2373.2s 235 60 |     10.105 |     8.185 |  0.000300
+2532.6s 236 70 |      9.899 |     9.704 |  0.000300
+2687.7s 237 80 |     10.266 |     9.623 |  0.000300
+2687.7s 238 Best Validation MAE: 7.079 bpm
+2687.7s 239 
+2687.7s 240 [Ablation B] No quality gate ...
+2687.7s 241 
+2687.7s 242 Ep |  Train MAE |   Val MAE |        LR
+2687.7s 243 ------------------------------------------
+2703.8s 244 1 |     67.499 |    49.829 |  0.000120
+2845.6s 245 10 |     10.930 |     8.263 |  0.000300
+3006.3s 246 20 |     10.588 |     7.452 |  0.000300
+3163.2s 247 30 |     10.095 |     7.724 |  0.000300
+3318.4s 248 40 |      9.681 |     7.283 |  0.000300
+3472.0s 249 50 |      9.484 |     7.621 |  0.000300
+3629.2s 250 60 |      9.631 |     9.837 |  0.000300
+3785.5s 251 70 |      9.429 |     9.330 |  0.000300
+3939.2s 252 80 |      9.531 |     8.032 |  0.000300
+3939.2s 253 Best Validation MAE: 7.283 bpm
+3939.2s 254 
+3939.2s 255 [Ablation C] No PTT loss ...
+3939.2s 256 
+3939.2s 257 Ep |  Train MAE |   Val MAE |        LR
+3939.2s 258 ------------------------------------------
+3954.6s 259 1 |     71.105 |    59.044 |  0.000120
+4096.0s 260 10 |     10.985 |     8.142 |  0.000300
+4260.1s 261 20 |     10.333 |     9.565 |  0.000300
+4416.6s 262 30 |     10.073 |     9.521 |  0.000300
+4570.8s 263 40 |     10.177 |     7.454 |  0.000150
+4724.2s 264 50 |      9.755 |     7.901 |  0.000300
+4877.2s 265 60 |      9.776 |     8.214 |  0.000300
+5033.7s 266 70 |     10.015 |     7.441 |  0.000300
+5186.8s 267 80 |      9.809 |     9.038 |  0.000300
+5186.8s 268 Best Validation MAE: 7.305 bpm
+5186.8s 269 
+5186.8s 270 =======================================================
+5186.8s 271 ACTION 3: Full Evaluation on Test Set
+5186.8s 272 =======================================================
+5213.6s 273 
+5213.6s 274 ========================================================================
+5213.6s 275 TABLE III-B — HR Estimation by Signal Quality (Action 3)
+5213.6s 276 ========================================================================
+5213.6s 277 Method                        All MAE  Good (q=1)  Bad (q=0)  Improv. (good)
+5213.6s 278 ----------------------------------------------------------------------
+5213.6s 279 TROIKA [SP]                    20.559       6.522     24.690               —
+5213.6s 280 MoWaveNet [Ours]                7.851       4.609      8.805           29.3%
+5213.6s 281 
+5213.6s 282 ============================================================
+5213.6s 283 TABLE V — Ablation Study (Val MAE, bpm)
+5213.6s 284 ============================================================
+5213.6s 285 Variant                              Val MAE  ΔvsFullModel
+5213.6s 286 ----------------------------------------------------------
+5213.6s 287 Full MoWaveNet                         7.162             —
+5213.6s 288 − Motion wavelet (fixed BPF)           7.079        -0.083
+5213.6s 289 − Quality gate (gate=1.0)              7.283        +0.121
+5213.6s 290 − PTT loss (λ=0)                       7.305        +0.143
+5213.6s 291 
+5213.6s 292 ======================================================================
+5213.6s 293 TABLE V-B — Motion-Wavelet Ablation, Stratified by Motion Group (Val)
+5213.6s 294 ======================================================================
+5213.6s 295 Model                           Walking MAE     n    Burst MAE     n
+5213.6s 296 ----------------------------------------------------------------------
+5219.2s 297 Full MoWaveNet                       10.947    20        8.604    40
+5224.6s 298 − Motion wavelet (fixed BPF)          7.425    20        7.790    40
+5224.6s 299 
+5224.6s 300 ============================================================
+5224.6s 301 FINAL IMPROVEMENT SUMMARY
+5224.6s 302 ============================================================
+5224.6s 303 Overall  MAE: TROIKA 20.559 → MoWaveNet 7.851 bpm (61.8% ↓)
+5224.6s 304 Good-qual MAE: TROIKA 6.522 → MoWaveNet 4.609 bpm (29.3% ↓)
+5224.6s 305 Walking  MAE: TROIKA 32.159 → MoWaveNet 10.962 bpm
+5224.6s 306 
+5224.6s 307 [SECTION 4+5 FINAL — COMPLETE]
+5224.6s 308 All tables ready for manuscript.
+5224.7s 309 Loaded split_ids.json
+5224.7s 310 Train:2742 Val:548 Test:598
+5224.7s 311 
+5224.7s 312 Training DeepPPG baseline ...
+5225.6s 313 /usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: adaptive_avg_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+5225.6s 314 return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+5225.6s 315 
+5225.6s 316 /usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py:865: UserWarning: adaptive_avg_pool2d_backward_cuda does not have a deterministic implementation, but you set 'torch.use_deterministic_algorithms(True, warn_only=True)'. You can file an issue at https://github.com/pytorch/pytorch/issues to help us prioritize adding deterministic support for this operation. (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:160.)
+5225.6s 317 return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+5240.9s 318 [deepppg] ep=1/40 val_mae=12.124
+5379.3s 319 [deepppg] ep=10/40 val_mae=8.871
+5534.4s 320 [deepppg] ep=20/40 val_mae=8.968
+5689.0s 321 [deepppg] ep=30/40 val_mae=8.937
+5848.4s 322 [deepppg] ep=40/40 val_mae=8.988
+5848.4s 323 
+5848.4s 324 Training CNN-BiLSTM baseline ...
+5864.3s 325 [cnnbilstm] ep=1/40 val_mae=33.759
+6001.0s 326 [cnnbilstm] ep=10/40 val_mae=8.728
+6152.4s 327 [cnnbilstm] ep=20/40 val_mae=8.803
+6306.8s 328 [cnnbilstm] ep=30/40 val_mae=8.845
+6478.6s 329 [cnnbilstm] ep=40/40 val_mae=8.805
+6478.6s 330 
+6478.6s 331 Training ResNet1D (Q-PPG style) baseline ...
+6496.8s 332 [resnet1d] ep=1/40 val_mae=9.301
+6634.7s 333 [resnet1d] ep=10/40 val_mae=18.724
+6785.7s 334 [resnet1d] ep=20/40 val_mae=8.970
+6935.5s 335 [resnet1d] ep=30/40 val_mae=8.465
+7087.3s 336 [resnet1d] ep=40/40 val_mae=7.588
+7087.3s 337 
+7087.3s 338 Loading MoWaveNet ...
+7087.3s 339 Evaluating on test set ...
+7087.3s 340 /tmp/ipykernel_22/376487746.py:324: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+7087.3s 341 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+7087.3s 342 
+7087.3s 343 /tmp/ipykernel_22/376487746.py:324: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+7087.3s 344 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+7106.3s 345 
+7106.3s 346 ========================================================================
+7106.3s 347 TABLE III — Overall HR Estimation on Test Set (ECG Reference)
+7106.3s 348 ========================================================================
+7106.3s 349 Method                        MAE(bpm)  RMSE(bpm)  Pearson r     N
+7106.3s 350 ----------------------------------------------------------------
+7106.3s 351 TROIKA [SP-1, Zhang'15]         20.559     26.129     0.1238   598
+7106.3s 352 TAPIR-style [SP-2, Schäck'17]    21.497     26.686     0.1799   598
+7106.3s 353 DeepPPG [DL-1, Reiss'19]         8.430     13.846     0.1515   598
+7106.3s 354 CNN-BiLSTM [DL-2]                8.479     14.015     0.0670   598
+7106.3s 355 ResNet1D [DL-3, Q-PPG-style]     8.175     14.246     0.1009   598
+7106.3s 356 MoWaveNet [Ours]                 7.851     13.377     0.2920   598
+7106.3s 357 
+7106.3s 358 ========================================================================================
+7106.3s 359 TABLE IV — Per-Motion-Class MAE (bpm), Test Set
+7106.3s 360 ========================================================================================
+7106.3s 361 Motion Class            TROIKA   TAPIR  DeepPPG   BiLSTM  ResNet MoWaveNet
+7106.3s 362 ----------------------------------------------------------------------------------
+7106.3s 363 rest                     19.000   19.738    7.663    7.803    7.555    7.493
+7106.3s 364 higher_pressure          20.750   22.432    6.914    6.985    7.807    7.499
+7106.3s 365 moving_finger            21.239   23.348    7.906    8.226    9.769    9.918
+7106.3s 366 walking                  32.159   32.364   17.606   17.467   15.626   10.962
+7106.3s 367 coughing                 25.841   26.591   13.835   13.761   12.966    9.880
+7106.3s 368 laughing                 24.364   27.909   12.762   12.548   10.571    9.442
+7106.3s 369 light_change             23.830   24.693    7.381    6.779    6.814    7.082
+7106.3s 370 talking                  22.250   23.523    8.347    8.229    6.820    7.698
+7106.3s 371 
+7106.3s 372 ============================================================
+7106.3s 373 TABLE V — Quality Gate: MAE on Good vs Bad Quality Records
+7106.3s 374 ============================================================
+7106.3s 375 Method                        Bad quality MAE  Good quality MAE
+7106.3s 376 ---------------------------------------------------------------
+7106.3s 377 TROIKA [SP-1]                          24.690             6.522
+7106.3s 378 TAPIR-style [SP-2]                     25.759             7.018
+7106.3s 379 DeepPPG [DL-1]                          9.340             5.339
+7106.3s 380 CNN-BiLSTM [DL-2]                       9.274             5.776
+7106.3s 381 ResNet1D [DL-3]                         9.386             4.060
+7106.3s 382 MoWaveNet [Ours]                        8.805             4.609
+7106.3s 383 
+7106.3s 384 Quality gate analysis:
+7106.3s 385 Good quality (=1) : 830 records (21.3%)
+7106.3s 386 Bad  quality (=0) : 3058 records (78.7%)
+7106.3s 387 Hard discard loses: 3058 records permanently
+7106.3s 388 MoWaveNet retains ALL 3888 records via soft gate
+7106.3s 389 
+7106.3s 390 ============================================================
+7106.3s 391 IMPROVEMENT SUMMARY vs BEST BASELINE
+7106.3s 392 ============================================================
+7106.3s 393 Best baseline : ResNet1D MAE=8.175 bpm
+7106.3s 394 MoWaveNet     : MAE=7.851 bpm
+7106.3s 395 Improvement   : 0.324 bpm (4.0% reduction)
+7106.3s 396 
+7106.3s 397 [PART A / SECTION 5 — COMPLETE]
+7106.3s 398 Tables III, IV, V ready for manuscript.
+7106.3s 399 
+7106.3s 400 Reusing already-loaded MoWaveNet / DeepPPG / CNN-BiLSTM / ResNet1D for Part B ...
+7106.3s 401 All models ready for Part B.
+7106.3s 402 Computing per-record errors for all models ...
+7108.2s 403 Paired records: 598
+7108.2s 404 MoWaveNet   MAE : 7.851 bpm
+7108.2s 405 DeepPPG     MAE : 8.430 bpm
+7108.2s 406 BiLSTM      MAE : 8.479 bpm
+7108.2s 407 ResNet1D    MAE : 8.175 bpm
+7108.2s 408 TAPIR-style MAE : 21.497 bpm
+7108.2s 409 
+7108.2s 410 ============================================================
+7108.2s 411 STATISTICAL SIGNIFICANCE — Wilcoxon Signed-Rank Test
+7108.2s 412 ============================================================
+7108.2s 413 
+7108.2s 414 MoWaveNet vs DeepPPG:
+7108.2s 415 n           = 598
+7108.2s 416 MAE MoWaveNet    = 7.851 bpm
+7108.2s 417 MAE DeepPPG      = 8.430 bpm
+7108.2s 418 W statistic = 79441.5
+7108.2s 419 p-value     = 1.6772e-02
+7108.2s 420 Effect size r = 0.0978  (small)
+7108.2s 421 Result: ✓ SIGNIFICANT (α=0.05) — MoWaveNet is BETTER
+7108.2s 422 
+7108.2s 423 MoWaveNet vs CNN-BiLSTM:
+7108.2s 424 n           = 598
+7108.2s 425 MAE MoWaveNet    = 7.851 bpm
+7108.2s 426 MAE CNN-BiLSTM   = 8.479 bpm
+7108.2s 427 W statistic = 79360.0
+7108.2s 428 p-value     = 1.5911e-02
+7108.2s 429 Effect size r = 0.0986  (small)
+7108.2s 430 Result: ✓ SIGNIFICANT (α=0.05) — MoWaveNet is BETTER
+7108.2s 431 
+7108.2s 432 MoWaveNet vs ResNet1D:
+7108.2s 433 n           = 598
+7108.2s 434 MAE MoWaveNet    = 7.851 bpm
+7108.2s 435 MAE ResNet1D     = 8.175 bpm
+7108.2s 436 W statistic = 85336.0
+7108.2s 437 p-value     = 3.1871e-01
+7108.2s 438 Effect size r = 0.0408  (small)
+7108.2s 439 Result: ✗ NOT significant (α=0.05) — MoWaveNet is BETTER
+7108.2s 440 
+7108.2s 441 MoWaveNet vs TAPIR-style:
+7108.2s 442 n           = 598
+7108.2s 443 MAE MoWaveNet    = 7.851 bpm
+7108.2s 444 MAE TAPIR-style  = 21.497 bpm
+7108.2s 445 W statistic = 15218.0
+7108.2s 446 p-value     = 3.1397e-69
+7108.2s 447 Effect size r = 0.7192  (large)
+7108.2s 448 Result: ✓ SIGNIFICANT (α=0.05) — MoWaveNet is BETTER
+7108.2s 449 
+7108.2s 450 >>> Copy to paper (Results section):
+7108.2s 451 'The improvement of MoWaveNet over DeepPPG is statistically
+7108.2s 452 significant (Wilcoxon signed-rank, p=1.677e-02, r=0.098, n=598)
+7108.2s 453 over CNN-BiLSTM (p=1.591e-02, r=0.099),
+7108.2s 454 over ResNet1D (p=3.187e-01, r=0.041),
+7108.2s 455 and over TAPIR-style (p=3.140e-69, r=0.719).'
+7108.2s 456 
+7108.2s 457 ============================================================
+7108.2s 458 INFERENCE TIME
+7108.2s 459 ============================================================
+7108.7s 460 
+7108.7s 461 Device     : CUDA
+7108.7s 462 Parameters : 816,445
+7108.7s 463 Inference  : 2.04 ± 0.11 ms per 10s window
+7108.7s 464 Throughput : 489.1 windows/second
+7108.7s 465 
+7108.7s 466 >>> Copy to paper (Section IV-Experiments):
+7108.7s 467 'MoWaveNet contains 816,445 trainable parameters.
+7108.7s 468 Inference requires 2.0 ms per 10-second window
+7108.7s 469 on CUDA, satisfying real-time smartphone deployment requirements.'
+7108.7s 470 
+7108.7s 471 ============================================================
+7108.7s 472 CPU INFERENCE TIME
+7108.7s 473 ============================================================
+7109.0s 474 
+7109.0s 475 CPU inference : 2.63 ± 0.21 ms per 10s window
+7109.0s 476 CPU throughput: 380.3 windows/second
+7109.0s 477 
+7109.0s 478 >>> Paper sentence:
+7109.0s 479 'On CPU, inference requires 2.6 ms per 10-second window'
+7109.0s 480 
+7109.0s 481 [PART B — COMPLETE]
+7109.0s 482 Wilcoxon significance + inference-time benchmarks ready for manuscript.
+7109.1s 483 Model loaded: /kaggle/working/mowavenet_final_best.pt
+7109.1s 484 /tmp/ipykernel_22/885246197.py:101: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+7109.1s 485 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+7109.1s 486 
+7109.1s 487 /tmp/ipykernel_22/885246197.py:101: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+7109.1s 488 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+7110.9s 489 
+7110.9s 490 ========== Large Underestimation Outliers ==========
+7110.9s 491 142007 | Pred=72.9 | CSV=129.0 | ECG recomputed=70.7 | Motion=0 | Quality=0.0
+7110.9s 492 142010 | Pred=78.8 | CSV=143.0 | ECG recomputed=75.8 | Motion=0 | Quality=0.0
+7110.9s 493 142028 | Pred=82.9 | CSV=140.0 | ECG recomputed=84.3 | Motion=4 | Quality=0.0
+7110.9s 494 142029 | Pred=82.3 | CSV=133.0 | ECG recomputed=79.6 | Motion=0 | Quality=0.0
+7110.9s 495 142034 | Pred=68.0 | CSV=120.0 | ECG recomputed=74.3 | Motion=0 | Quality=0.0
+7110.9s 496 142036 | Pred=68.2 | CSV=159.0 | ECG recomputed=72.4 | Motion=6 | Quality=0.0
+7110.9s 497 142039 | Pred=81.2 | CSV=161.0 | ECG recomputed=84.5 | Motion=0 | Quality=0.0
+7110.9s 498 142040 | Pred=80.3 | CSV=143.0 | ECG recomputed=83.5 | Motion=0 | Quality=0.0
+7110.9s 499 142042 | Pred=74.4 | CSV=138.0 | ECG recomputed=69.6 | Motion=7 | Quality=0.0
+7110.9s 500 142053 | Pred=65.8 | CSV=138.0 | ECG recomputed=65.8 | Motion=0 | Quality=0.0
+7110.9s 501 142054 | Pred=62.9 | CSV=147.0 | ECG recomputed=67.9 | Motion=0 | Quality=0.0
+7110.9s 502 
+7110.9s 503 Total outliers (< -50 bpm): 11
+7110.9s 504 
+7110.9s 505 Bland-Altman Statistics:
+7110.9s 506 n          = 598
+7110.9s 507 Bias       = -5.537 bpm
+7110.9s 508 SD         = 12.188 bpm
+7110.9s 509 LoA upper  = 18.351 bpm
+7110.9s 510 LoA lower  = -29.425 bpm
+7110.9s 511 Within LoA = 95.7%
+7110.9s 512 
+7110.9s 513 >>> Paper sentence:
+7110.9s 514 'MoWaveNet demonstrates a mean bias of -5.54 bpm with
+7110.9s 515 95% limits of agreement [-29.42, 18.35] bpm
+7110.9s 516 against ECG reference HR (Bland-Altman analysis, n=598).'
+7111.1s 517 /tmp/ipykernel_22/885246197.py:355: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+7111.1s 518 plt.tight_layout()
+7111.1s 519 
+7111.1s 520 /tmp/ipykernel_22/885246197.py:355: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+7111.1s 521 plt.tight_layout()
+7112.6s 522 
+7112.6s 523 Saved: fig5_bland_altman.pdf / .png
+7112.8s 524 Model loaded: /kaggle/working/mowavenet_final_best.pt
+7112.8s 525 Figure 4: Learned filter responses ...
+7112.8s 526 
+7112.8s 527 Mean in-band filter magnitude (dB) by group:
+7112.8s 528 Band                      Group0    Group1    Group2
+7112.8s 529 HR band [0.67-3.0]        -13.44    -13.81    -13.11
+7112.8s 530 Step freq [1.0-2.5]       -12.96    -13.25    -12.67
+7112.8s 531 Burst [4.0-15.0]          -14.99    -15.69    -14.09
+7112.8s 532 /tmp/ipykernel_22/3662004341.py:152: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+7112.8s 533 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+7112.8s 534 
+7112.8s 535 /tmp/ipykernel_22/3662004341.py:152: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+7112.8s 536 self.transformer=nn.TransformerEncoder(el,num_layers=n_layers)
+7113.5s 537 Saved fig4_learned_filters
+7118.9s 538 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+7118.9s 539 cells[i][c] = re.sub('\\\\\|', '|', cell)
+7119.0s 540 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+7119.0s 541 text = re.sub(r'_', '\_', text) # Escape underscores in display text
+7119.6s 542 [NbConvertApp] Converting notebook __notebook__.ipynb to notebook
+7120.0s 543 [NbConvertApp] Writing 175554 bytes to __notebook__.ipynb
+7122.3s 544 [NbConvertApp] Converting notebook __notebook__.ipynb to html
+7123.6s 545 [NbConvertApp] Writing 978642 bytes to __results__.html

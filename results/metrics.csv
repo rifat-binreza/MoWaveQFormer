@@ -1,0 +1,7 @@
+method,mae_bpm,rmse_bpm,pearson_r,n,source
+TROIKA-labelled SP1,20.559,26.129,0.1238,598,supplied_run_log
+TAPIR-style,21.497,26.686,0.1799,598,supplied_run_log
+DeepPPG,8.430,13.846,0.1515,598,supplied_run_log
+CNN-BiLSTM,8.479,14.015,0.0670,598,supplied_run_log
+ResNet1D Q-PPG-style,8.175,14.246,0.1009,598,supplied_run_log
+MoWaveNet,7.851,13.377,0.2920,598,supplied_run_log
