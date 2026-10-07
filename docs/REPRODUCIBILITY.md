@@ -2,7 +2,7 @@
 
 ## Release provenance
 
-The notebook and log are byte-for-byte copies of materials supplied by Rifat Bin Reza. Repository preparation added documentation, dependencies and a transcribed metrics CSV; it did not change model code, labels, splits or recorded outputs.
+The notebook and log are byte-for-byte copies of materials supplied by Rifat Bin Reza.
 
 SHA-256:
 - `notebooks/brnodatajournal.ipynb`: `2635fa9e231a4ab8c4e806a4f05ee54fc962512be212c205c24541c775f6032d`
