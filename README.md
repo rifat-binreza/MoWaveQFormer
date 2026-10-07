@@ -2,14 +2,12 @@
 
 <div align="center">
 
-  <img src="https://img.shields.io/badge/Research-PPG%20Heart%20Rate-8A2BE2?style=for-the-badge" alt="Research area" />
-  <img src="https://img.shields.io/badge/Mode-Motion%20Conditioned-00C853?style=for-the-badge" alt="Mode" />
+  <img src="https://img.shields.io/badge/Research-PPG%20Heart%20Rate-8A2BE2?style=for-the-badge&logo=heart&logoColor=white" alt="PPG heart-rate research" />
+  <img src="https://img.shields.io/badge/Mode-Motion%20Conditioned-00C853?style=for-the-badge" alt="Motion conditioned" />
   <img src="https://img.shields.io/badge/Quality-Gated-FF6D00?style=for-the-badge" alt="Quality gated" />
-  <img src="https://img.shields.io/badge/Signals-PPG%20%2B%20ECG%20%2B%20ACC-1E88E5?style=for-the-badge" alt="Signals" />
+  <img src="https://img.shields.io/badge/Signals-PPG%20%2B%20ECG%20%2B%20ACC-1E88E5?style=for-the-badge" alt="Multi-sensor" />
 
-  <p>
-    <strong>Motion-conditioned, quality-gated smartphone PPG heart-rate estimation</strong>
-  </p>
+  <h3><strong>Motion-conditioned, quality-gated smartphone PPG heart-rate estimation</strong></h3>
 
   <p>
     A public research summary for robust heart-rate estimation from smartphone-acquired physiological and motion signals.
@@ -17,48 +15,71 @@
 
 </div>
 
-## Why this matters
+## ✨ Overview
 
-Heart-rate estimation from smartphone PPG is highly sensitive to motion artifacts and signal quality changes. This project studies how to condition estimation on motion context and quality information so the model can remain reliable in realistic, noisy recording environments.
+MoWaveQFormer investigates how motion context and signal quality affect heart-rate estimation from smartphone-acquired PPG recordings. The project is designed around the idea that physiological signals are not just noisy — they are context-dependent: motion, drift, and signal reliability all shape how reliable the estimate should be.
 
-## Project snapshot
+This repository presents a compact public-facing summary of the research workflow, the evaluation narrative, and the benchmark snapshot, while keeping the richer implementation details in the broader project context.
 
-- Estimates heart rate from smartphone-based photoplethysmography (PPG)
-- Uses motion context and quality gating to suppress unreliable segments
-- Combines multi-sensor context from PPG, ECG, and accelerometry
-- Evaluates with subject-aware validation and clinically relevant metrics
-- Keeps the public repo lightweight while documenting the research workflow and reproducibility notes
+## 🎯 Why this matters
 
-## High-level pipeline
+Smartphone PPG is attractive because it is easy to collect and highly scalable, but it is also highly sensitive to:
+
+- motion artifacts
+- sensor instability
+- low-quality segments
+- subject variability
+- environmental or device-induced drift
+
+Instead of treating these as isolated nuisances, the project explicitly models motion and signal quality as part of the estimation process.
+
+## 🧠 Core idea
+
+The main hypothesis is simple but powerful:
+
+- quality-aware conditioning improves robustness
+- motion-aware preprocessing stabilizes the signal stream
+- subject-aware validation gives a more trustworthy estimate of real-world performance
+
+In practice, the system screens low-confidence signal windows, accounts for motion context, and evaluates the output under realistic subject-level splits.
+
+## 🔁 End-to-end pipeline
 
 ```mermaid
 flowchart LR
-    A[Smartphone sensors\nPPG + ECG + Accelerometer + metadata] --> B[Data validation\nand synchronization]
-    B --> C[Quality screening\nremove low-confidence segments]
-    C --> D[Motion-aware preprocessing\nfilter + normalize + align]
-    D --> E[Feature extraction\ntime + frequency + quality features]
-    E --> F[Quality gating\n& motion conditioning]
+    A[Smartphone sensors<br/>PPG + ECG + Accelerometer + metadata] --> B[Validation & synchronization]
+    B --> C[Signal quality screening]
+    C --> D[Motion-aware preprocessing<br/>filter + normalize + align]
+    D --> E[Feature extraction<br/>time + frequency + quality features]
+    E --> F[Quality gating & motion conditioning]
     F --> G[Heart-rate estimation]
     G --> H[Subject-aware evaluation]
-    H --> I[Report\nMAE / RMSE / Pearson r]
+    H --> I[Reported metrics<br/>MAE / RMSE / Pearson r]
 
-    classDef sensor fill:#1f6feb,stroke:#0b3b8f,color:#fff,stroke-width:1px;
-    classDef proc fill:#0ea5e9,stroke:#075985,color:#fff,stroke-width:1px;
-    classDef model fill:#8b5cf6,stroke:#4c1d95,color:#fff,stroke-width:1px;
-    classDef result fill:#10b981,stroke:#065f46,color:#fff,stroke-width:1px;
+    classDef sensor fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:1px;
+    classDef process fill:#0ea5e9,stroke:#0369a1,color:#fff,stroke-width:1px;
+    classDef model fill:#8b5cf6,stroke:#6d28d9,color:#fff,stroke-width:1px;
+    classDef result fill:#10b981,stroke:#047857,color:#fff,stroke-width:1px;
 
     class A,B,C,D,E sensor;
-    class F,G model;
+    class F,G process;
     class H,I result;
 ```
 
-## Key idea
+## 📊 Method summary
 
-The project treats motion and signal quality as first-class contextual variables rather than nuisance noise. By screening low-quality segments and conditioning on motion context, the pipeline aims to stabilize heart-rate estimation under realistic usage conditions.
+The public workflow follows a structured research pipeline:
 
-## Public benchmark snapshot
+1. Data validation and subject-level checks
+2. Synchronization across sensor streams
+3. Signal quality screening and motion-aware filtering
+4. Feature extraction across time and frequency domains
+5. Quality-gated and motion-conditioned analysis
+6. Subject-aware evaluation and comparative reporting
 
-The repository includes a compact result summary in `results/metrics.csv`. Below is the current public benchmark snapshot for the reported methods.
+## 📈 Benchmark snapshot
+
+The public results in `results/metrics.csv` summarize a compact comparison of several baseline and motion-aware methods.
 
 | Method | MAE (bpm) | RMSE (bpm) | Pearson r | N |
 |---|---:|---:|---:|---:|
@@ -71,21 +92,23 @@ The repository includes a compact result summary in `results/metrics.csv`. Below
 
 <div align="center">
 
-  <p><strong>Best public result in this snapshot:</strong> <code>MoWaveNet</code> with <strong>7.851 bpm MAE</strong> and <strong>0.292 Pearson r</strong></p>
+  <p><strong>Best public result in this snapshot:</strong> <code>MoWaveNet</code></p>
+  <p><strong>MAE:</strong> 7.851 bpm &nbsp;•&nbsp; <strong>RMSE:</strong> 13.377 bpm &nbsp;•&nbsp; <strong>Pearson r:</strong> 0.292</p>
 
 </div>
 
-## Scientific framing
+## 🧪 Data and signals
 
-This work sits at the intersection of:
+This study uses synchronized multimodal recordings, including:
 
-- physiological signal processing
-- motion artifact handling
-- quality-aware estimation
-- smartphone sensing and robustness analysis
-- reproducible research in mobile health
+- PPG signal
+- ECG signal
+- tri-axial accelerometer data
+- subject metadata and quality labels
 
-## Repository structure
+The goal is to better understand how motion and sensor quality alter the reliability of HR estimation in realistic smartphone conditions.
+
+## 📁 Repository layout
 
 ```text
 .
@@ -103,303 +126,45 @@ This work sits at the intersection of:
 ├── CITATION.cff
 ├── citation.bib
 ├── LICENSE
-└── .gitignore
+├── .gitignore
+└── .github/
 ```
 
-## Public documentation
+## 📚 Public documentation
 
 - `docs/METHODS.md` — public method overview and algorithm sketch
-- `docs/REPRODUCIBILITY.md` — reproducibility notes and run setup details
-- `notebooks/brnodatajournal.ipynb` — research notebook summary
-- `results/metrics.csv` — public benchmark summary
+- `docs/REPRODUCIBILITY.md` — execution and reproducibility notes
+- `docs/PRIVATE_ARCHITECTURE.md` — internal architecture context
+- `notebooks/brnodatajournal.ipynb` — notebook-based research narrative
+- `results/metrics.csv` — benchmark snapshot and summary metrics
 
-## Quick start
+## 🚀 Quick start
 
-1. Review the public methods summary in `docs/METHODS.md`
+1. Read the method summary in `docs/METHODS.md`
 2. Inspect the notebook in `notebooks/brnodatajournal.ipynb`
-3. Check `results/metrics.csv` for the benchmark snapshot
-4. Use the reproducibility notes for environment and execution context
+3. Review the result summary in `results/metrics.csv`
+4. Use `docs/REPRODUCIBILITY.md` for execution and environment details
 
-## Citation
+## 📌 Scientific framing
 
-If you use this project in your work, please cite the repository metadata in `CITATION.cff` or the BibTeX file `citation.bib`.
+This work sits at the intersection of:
 
-## Notes
+- physiological signal processing
+- quality-aware sensing
+- motion artifact mitigation
+- smartphone-based health monitoring
+- reproducible computational research
 
-This repository is intentionally kept concise in its public view while still preserving enough methodological and evaluation context for others to understand the work, inspect the workflow, and reproduce the broader research narrative.
+## 🏷️ Citation
+
+If you use this project in your research, please refer to the metadata in `CITATION.cff` or the BibTeX file `citation.bib`.
+
+## 📝 Notes
+
+This repository is intentionally compact in its public presentation, while still preserving the essential scientific story: the dataset, the method, the motion-aware logic, and the evaluation context needed to understand the work.
 
 ---
 
 <p align="center">
-  <sub>Built for clarity, motion-aware sensing, and reproducible research.</sub>
+  <sub>Built for clarity, robustness, and reproducible research.</sub>
 </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
