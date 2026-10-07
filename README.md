@@ -80,4 +80,4 @@ Please cite the [MoWaveQFormer preprint](https://arxiv.org/abs/2609.16248) when 
 
 The dataset is **Brno University of Technology Smartphone PPG Database (BUT PPG), v2.0.0**, DOI [10.13026/tn53-8153](https://doi.org/10.13026/tn53-8153), distributed by PhysioNet under CC BY 4.0. Follow the dataset's citation and attribution requirements. Data ownership remains with its original contributors.
 
-**Software licensing:** no software license was supplied with these materials; this repository does not grant an additional software license. Research code has not been clinically validated.
+**Software licensing:** this repository's software is available under the [MIT License](LICENSE). The BUT PPG dataset retains its separate CC BY 4.0 license, and the linked paper retains its own terms. Research code has not been clinically validated.
