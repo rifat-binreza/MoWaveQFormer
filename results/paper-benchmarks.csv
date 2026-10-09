@@ -1,0 +1,7 @@
+method,mae_bpm,rmse_bpm,pearson_r,n,source
+TROIKA,20.559,26.129,0.124,598,arXiv:2609.16248v1 Table II
+Harmonic-SP,21.497,26.686,0.180,598,arXiv:2609.16248v1 Table II
+DeepPPG,8.430,13.846,0.152,598,arXiv:2609.16248v1 Table II
+CNN-BiLSTM,8.479,14.015,0.067,598,arXiv:2609.16248v1 Table II
+ResNet1D,8.175,14.246,0.101,598,arXiv:2609.16248v1 Table II
+MoWaveQFormer,7.851,13.377,0.292,598,arXiv:2609.16248v1 Table II
