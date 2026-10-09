@@ -21,7 +21,7 @@ The research combines:
 - **Physiological supervision:** ECG-derived heart rate and a pulse-transit-time (PTT) consistency term guide training.
 - **Subject-independent evaluation:** subjects are separated across training, validation and test partitions.
 
-This repository presents the paper's architecture, figures and reported evidence alongside the available notebook, logs and documentation. The preprint is available at [arXiv:2609.16248](https://arxiv.org/abs/2609.16248).
+This repository presents the paper's architecture, figures and reported evidence alongside modular Python code, training/evaluation scripts, logs and documentation. The preprint is available at [arXiv:2609.16248](https://arxiv.org/abs/2609.16248).
 
 ---
 
@@ -140,17 +140,24 @@ git clone https://github.com/rifat-binreza/MoWaveQFormer.git
 cd MoWaveQFormer
 ```
 
-1. Read the [paper](https://arxiv.org/pdf/2609.16248) and [paper guide](docs/PAPER_GUIDE.md).
-2. Explore the [available research notebook](notebooks/brnodatajournal.ipynb) and [execution log](results/logs/kaggle-run.txt).
-3. Inspect the [paper benchmark CSV](results/paper-benchmarks.csv).
-4. Review the [reproducibility notes](docs/REPRODUCIBILITY.md) before attempting execution.
+Install and run the documented Python pipeline:
 
-The repository contains a research summary and available supporting artifacts; it does not yet constitute a complete, independently verified reproduction package with released trained weights. The older [metrics snapshot](results/metrics.csv) is retained separately from the paper-labelled benchmark table.
+```bash
+python -m pip install -r python/requirements.txt
+python python/train.py --data-root /path/to/but-ppg --output runs/mowave
+python python/evaluate.py --data-root /path/to/but-ppg --run runs/mowave
+```
+
+See the [Python implementation guide](python/README.md) for dataset layout, inference, ablations and module responsibilities. Separate files cover preprocessing, motion conditioning, datasets, architecture, losses, baselines, training and evaluation. The model preserves the supplied research notebook's parameter names and forward operations.
+
+The code passes CPU pipeline checks, including checkpoint recovery and exact model-output parity against the source notebook. Dataset benchmarks have not been rerun, and trained weights are not bundled. The [implementation notes](docs/IMPLEMENTATION.md) describe extraction and validation; the older [metrics snapshot](results/metrics.csv) remains separate from the paper-labelled benchmark table.
 
 ## Repository guide
 
 | Location | Contents |
 | :--- | :--- |
+| [python/](python/) | Documented implementation modules and training, evaluation and prediction CLIs |
+| [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md) | Source extraction, verification and execution limits |
 | [assets/](assets/) | Four paper figures and figure provenance |
 | [docs/PAPER_GUIDE.md](docs/PAPER_GUIDE.md) | Paper-grounded method details and evaluation context |
 | [docs/METHODS.md](docs/METHODS.md) | Earlier public method notes |
